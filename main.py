@@ -57,10 +57,12 @@ app = FastAPI(
 
 # CORS (Cross-Origin Resource Sharing) Middleware
 origins = [
-    "http://localhost",         # Common for local development
-    "http://localhost:3000",    # Default for React's create-react-app
-    "http://localhost:5173",    # Default for Vite (React)
+    "http://localhost",                  # local dev
+    "http://localhost:3000",             # React default dev port
+    "http://localhost:5173",             # Vite dev port
+    "https://botani-cart.vercel.app",    # ✅ your deployed frontend
 ]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
